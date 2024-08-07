@@ -6,7 +6,7 @@ class Todo extends Model {
   public title!: string;
   public description?: string;
   public color?: string;
-  public isFavorite!: boolean;
+  public isFavorite?: boolean;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
 }
