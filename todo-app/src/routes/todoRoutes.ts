@@ -1,19 +1,14 @@
 import { Router } from 'express';
-
-import {
-  getTasks,
-  createTask,
-  updateTask,
-  deleteTask,
-} from '../controllers/taskControllers';
+import TodoController from '../controllers/todoControllers';
 import { validateId, validateTask } from '../middlewares/validations';
 
 
 const router = Router();
 
-router.get('/', getTasks);
-router.post('/', validateTask, createTask);
-router.put('/:id', validateTask, updateTask);
-router.delete('/:id', validateId, deleteTask)
+router.get('/', TodoController.getAllTasks);
+router.post('/', validateTask, TodoController.createTask);
+router.put('/:id', validateTask, validateId, TodoController.updateTask);
+router.delete('/:id', validateId, TodoController.deleteTask);
+router.delete('/', TodoController.deleteAllTasks);
 
 export default router;
