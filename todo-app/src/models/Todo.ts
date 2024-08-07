@@ -33,7 +33,7 @@ Todo.init({
   },
 }, {
   sequelize,
-  tableName: 'todoList',
+  tableName: 'todo_list',
 });
 
 export default Todo;

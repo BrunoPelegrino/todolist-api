@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 // Rotas
-app.use('/api/todoList', todoRoutes);
+app.use('/api/todo_list', todoRoutes);
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
