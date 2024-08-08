@@ -1,5 +1,5 @@
 ## Descrição
-A Todo API é uma aplicação backend construída com Node.js e TypeScript que permite aos usuários criar, ler, atualizar e deletar tarefas. A API usa Sequelize para interagir com um banco de dados PostgreSQL.
+A Todo API é uma aplicação Fullstack construída com Node.js, TypeScript e React que permite aos usuários criar, ler, atualizar e deletar tarefas. A API usa Sequelize para interagir com um banco de dados PostgreSQL.
 
 ## Funcionalidades:
 - Criar uma nova tarefa
