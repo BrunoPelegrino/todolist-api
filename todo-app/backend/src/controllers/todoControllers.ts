@@ -36,7 +36,6 @@ class TodoController {
     }
   }
 
- 
   public async deleteTask(req: Request, res: Response): Promise<void> {
     try {
       const rowsDeleted = await TodoService.deleteTask(

@@ -11,29 +11,32 @@ class Todo extends Model {
   public readonly updatedAt!: Date;
 }
 
-Todo.init({
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true,
+Todo.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    description: {
+      type: DataTypes.STRING,
+    },
+    color: {
+      type: DataTypes.STRING,
+    },
+    isFavorite: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
+  {
+    sequelize,
+    tableName: 'todo_list',
   },
-  description: {
-    type: DataTypes.STRING,
-  },
-  color: {
-    type: DataTypes.STRING,
-  },
-  isFavorite: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: false,
-  },
-}, {
-  sequelize,
-  tableName: 'todo_list',
-});
+);
 
 export default Todo;
