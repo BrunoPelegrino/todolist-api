@@ -15,6 +15,7 @@ class TodoService {
       returning: true,
     });
   }
+  
 
   async deleteTask(id: number): Promise<number> {
     return Todo.destroy({

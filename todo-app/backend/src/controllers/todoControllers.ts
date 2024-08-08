@@ -35,6 +35,7 @@ class TodoController {
       res.status(500).json({ error: 'Failed to update task' });
     }
   }
+
  
   public async deleteTask(req: Request, res: Response): Promise<void> {
     try {
