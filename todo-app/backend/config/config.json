@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "brunop",
+    "password": "19082013",
+    "database": "tododatabase",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "brunop",
+    "password": "19082013",
+    "database": "tododatabase",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "brunop",
+    "password": "19082013",
+    "database": "tododatabase",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

@@ -22,20 +22,25 @@ class TodoController {
 
   public async updateTask(req: Request, res: Response): Promise<void> {
     try {
-      const [rowsUpdated, [updatedTask]] = await TodoService.updateTask(parseInt(req.params.id, 10), req.body);
+      const [rowsUpdated, [updatedTask]] = await TodoService.updateTask(
+        parseInt(req.params.id, 10),
+        req.body,
+      );
       if (rowsUpdated === 0) {
         res.status(404).json({ error: 'Task not found' });
       } else {
         res.json(updatedTask);
       }
     } catch (error) {
-      res.status(500).json({ error: 'Failed to update task' }); 
+      res.status(500).json({ error: 'Failed to update task' });
     }
   }
-
+ 
   public async deleteTask(req: Request, res: Response): Promise<void> {
     try {
-      const rowsDeleted = await TodoService.deleteTask(parseInt(req.params.id, 10));
+      const rowsDeleted = await TodoService.deleteTask(
+        parseInt(req.params.id, 10),
+      );
       if (rowsDeleted === 0) {
         res.status(404).json({ error: 'Task not found' });
       } else {
@@ -47,13 +52,11 @@ class TodoController {
   }
   public async deleteAllTasks(req: Request, res: Response): Promise<void> {
     try {
-        res.status(200).json({ message: 'All tasks were successfully deleted' });
+      res.status(200).json({ message: 'All tasks were successfully deleted' });
     } catch (error) {
       res.status(500).json({ error: 'Failed to delete all tasks' });
     }
   }
-
-
 }
 
 export default new TodoController();
