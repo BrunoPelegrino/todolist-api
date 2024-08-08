@@ -32,7 +32,7 @@
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      opacity: 0px;
+      opacity: 1;
       box-shadow: 2px 2px 3px 0px #00000040;
       padding: 1px;
       text-align: left;
@@ -61,17 +61,19 @@
       }
 
       .buttonDelete,
-      .buttonFav {
+      .buttonFav,
+      .selectColor {
         position: absolute;
         border: none;
         background: transparent;
         cursor: pointer;
         transition: opacity 0.15s ease;
-        fill: #fff; // Ajuste conforme necessário
+        fill: #fff;
+        z-index: 10;
 
         svg {
-          width: 20px; // Ajuste conforme necessário
-          height: 20px; // Ajuste conforme necessário
+          width: 20px;
+          height: 20px;
         }
       }
 
@@ -100,6 +102,34 @@
           opacity: 0.8;
         }
       }
+
+      .selectColor {
+        bottom: 10px;
+        left: 10px;
+        cursor: pointer;
+        position: absolute;
+        z-index: 10;
+        
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        input {
+          position: absolute; 
+          opacity: 0; 
+          cursor: pointer;
+          height: 100%; 
+          width: 10%;
+          top: 0;
+          left: 0;
+          z-index: 20;
+        }
+      }
     }
+  }
+
+  .hiddenInput {
+    display: none;
   }
 }
