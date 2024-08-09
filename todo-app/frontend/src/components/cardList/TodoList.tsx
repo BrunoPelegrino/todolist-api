@@ -129,6 +129,8 @@ function TodoList() {
                   <textarea
                     className={styles.descriptionInput}
                     value={editDescription}
+                      name="description"
+                      maxLength={5000}
                     onChange={(e) => setEditDescription(e.target.value)}
                   />
 
