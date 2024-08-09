@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import styles from './TodoList.module.scss';
+import TodoForm from '../todoForm/TodoForm'
 
 interface Todo {
   id: number;
@@ -35,6 +36,11 @@ function TodoList() {
 
     fetchTasks();
   }, []);
+
+  const handleAddTask = async () => {
+    const response = await api.get('/todo_list');
+    setTasks(response.data)
+  }
 
   const handleDeleteBtn = async (id: number) => {
     try {
@@ -102,7 +108,7 @@ function TodoList() {
 
   return (
     <div className={styles.TodoList}>
-      <h1>Todo List</h1>
+      <TodoForm addTask={handleAddTask}/>
       <ul className={styles.ul}>
         {tasks.map((task) => (
           <li className={styles.li} key={task.id}>
