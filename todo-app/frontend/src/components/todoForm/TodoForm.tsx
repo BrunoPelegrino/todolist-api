@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import api from '../../services/api';
+import styles from './TodoForm.module.scss';
 
 interface TaskFormProps {
   addTask: () => void;
 }
-
 
 function TodoForm({ addTask }: TaskFormProps) {
   const [title, setTitle] = useState('');
@@ -27,30 +27,42 @@ function TodoForm({ addTask }: TaskFormProps) {
   };
 
   const handleInputTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = e.target.value;
-    setTitle(inputValue);
-  }
+    setTitle(e.target.value);
+  };
 
   const handleInputDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const inputValue = e.target.value;
-    setDescription(inputValue);
-  }
+    setDescription(e.target.value);
+  };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); // Impede a nova linha no textarea
+      handleSubmit(e as unknown as React.FormEvent<HTMLFormElement>);
+    }
+  };
 
   return (
-  <form onSubmit={handleSubmit}>
-    <input type="text" 
-    value={title}
-    name='title'
-    onChange={handleInputTitle}
-    />
-    <textarea 
-    value={description}
-    onChange={handleInputDescription}
-    name="" 
-    id=""/>
-    <button type="submit">Add Task</button>
-  </form>
+    <form
+      onSubmit={handleSubmit}
+      onKeyDown={handleKeyDown}
+      className={styles.formContainer}
+    >
+      
+      <input
+        type="text"
+        value={title}
+        name="title"
+        onChange={handleInputTitle}
+        placeholder="Title"
+      />
+      <div className={styles.separatorLine}></div>
+      <textarea
+        value={description}
+        onChange={handleInputDescription}
+        placeholder="Create note..."
+        name="description"
+      />
+    </form>
   );
 }
 
