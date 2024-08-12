@@ -9,6 +9,7 @@ function Header() {
         <img src={logo} alt="Logo" />
         <h1>CoreNotes</h1>
       </div>
+
       <div className={styles.searchBar}>
         <input type="text" placeholder="Search notes"  />
       </div>
