@@ -9,6 +9,7 @@ A Todo API é uma aplicação Fullstack construída com Node.js, TypeScript e Re
 - Atualizar uma tarefa existente
 - Deletar uma tarefa específica
 - Deletar todas as tarefas
+- Mudar a cor dos cards
 
 ## Requisitos:
 - Node.js v16.15.0 ou superior
