@@ -19,7 +19,7 @@ A Todo API é uma aplicação Fullstack construída com Node.js, TypeScript e Re
 ## Instalação
 
 ## Clone o repositório:
-git clone https://github.com/seu-usuario/todo-api.git
+git clone git@github.com:BrunoPelegrino/todolist-api.git
 cd todo-api
 
 ## Instale as dependências:
